@@ -4,15 +4,14 @@
         <div class="post__title"><b> {{post.title}} </b></div>
         <div class="post__body"><b> {{post.body}} </b></div>
     </div>
-    <button-component>X</button-component>
+    <button-comp
+      @click="$emit('delete', post)"
+    >X</button-comp>
   </div>
 </template>
 
 <script>
-import ButtonComponent from '@/components/UI/ButtomComp'
-
 export default{
-  components: { ButtonComponent },
   props: {
     post: {
       type: Object,

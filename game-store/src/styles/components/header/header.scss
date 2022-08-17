@@ -1,0 +1,35 @@
+.Header{
+    @include flex(flex, center, space-between);
+    height: 6rem;
+    padding: 0 2rem;
+    background: #0e121b;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    &__wrapper{
+        background: aquamarine;
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        backdrop-filter: saturate(180%) blur(20px);
+    }
+    &__left{
+        img{
+            max-width: 4rem;
+            min-width: 4rem;
+            max-height: 4rem;
+            min-height: 4rem;
+            object-fit: contain;
+        }
+    }
+    &__right{
+        button{
+            min-width: 11rem;
+            &:last-child{
+                margin-left: 2rem;
+            }
+        }
+    }
+    &__fix{
+        height: 6rem;
+    }
+}
