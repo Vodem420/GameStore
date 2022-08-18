@@ -1,12 +1,14 @@
 <template>
-  <div>
-    <post-form 
+  <div class="Landing">
+    <div class="posts">
+      <post-form 
       @create="createPost"
     />
     <post-list 
       :posts="posts"
       @delete="deletePost"
     />
+    </div>
   </div>
 </template>
 

@@ -1,8 +1,8 @@
 .Header{
     @include flex(flex, center, space-between);
-    height: 6rem;
+    height: var(--HeaderH);
     padding: 0 2rem;
-    background: #0e121b;
+    background: #0B0E15;
     position: fixed;
     top: 0;
     left: 0;
@@ -30,6 +30,6 @@
         }
     }
     &__fix{
-        height: 6rem;
+        height: var(--HeaderH);;
     }
 }
