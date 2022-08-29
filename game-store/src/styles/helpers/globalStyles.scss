@@ -9,6 +9,7 @@ html{
 body{
     font-size: 1.6rem;
     font-family: "Roboto", sans-serif;
+    background: #04040B;
 
     @keyframes animatedCircle {
         0% {
@@ -24,4 +25,8 @@ body{
     .animated {
         animation: animatedCircle 6s linear infinite;
     }
+}
+
+.display-flex{
+    display: flex;
 }

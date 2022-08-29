@@ -7,23 +7,26 @@
     top: 0;
     left: 0;
     right: 0;
-    &__wrapper{
-        background: aquamarine;
-        -webkit-backdrop-filter: saturate(180%) blur(20px);
-        backdrop-filter: saturate(180%) blur(20px);
-    }
+    z-index: 5;
     &__left{
+        @include flex(flex, center);
         img{
             max-width: 4rem;
             min-width: 4rem;
             max-height: 4rem;
             min-height: 4rem;
             object-fit: contain;
+            margin-right: 3rem;
+            cursor: pointer;
         }
     }
     &__right{
-        button{
-            min-width: 11rem;
+        @include flex(flex, center);
+        a{
+            display: block;
+            min-width: 10rem;
+            padding: 0.9rem 2rem;
+            text-align: center;
             &:last-child{
                 margin-left: 2rem;
             }
@@ -31,5 +34,47 @@
     }
     &__fix{
         height: var(--HeaderH);;
+    }
+}
+
+.searchInput__wrapper{
+    $tl: 0.6s; // transition length
+    .searchInput {
+        transition: width $tl, border-radius $tl, background $tl, box-shadow $tl;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 2rem;
+        border: 1px solid greenyellow;
+        cursor: pointer;
+        background: none;
+        &:hover {
+            box-shadow: 0 0 5px 3px greenyellow;
+        }
+        &::placeholder {
+            color: greenyellow;
+            opacity: 0.5;
+        }
+        &:focus {
+            transition: width $tl cubic-bezier(0,1.22,.66,1.39), border-radius $tl, background $tl;
+            outline: none;
+            box-shadow: none;
+            padding-left: 1.5rem;
+            cursor: text;
+            width: 30rem;
+            color: greenyellow;
+        }
+        &:not(:focus) {
+            text-indent:-5000px; // for more-graceful falling back (:not browsers likely support indent)
+        }
+    }
+    i {
+        color: greenyellow;
+        position: relative;
+        left: -3.2rem;
+        top: .7rem;
+        cursor: pointer;
+    }
+    #search-submit {
+        position: relative;left: -5000px;
     }
 }

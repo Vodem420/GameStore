@@ -2,30 +2,51 @@
     <div class="Header__wrapper">
         <div class="Header">
             <div class="Header__left">
-                <img :src="currentLogo" alt="games store logo">
+                <transition>
+                    <img :src="currentLogo" @click="$router.push('/')" alt="games store logo" />
+                </transition>
+                <form class="searchInput__wrapper">
+                    <input-comp 
+                        id="search-box"
+                        placeholder="Search..."
+                        class="searchInput" 
+                        :value="search"
+                        @input="updateSearch"
+                    />
+                    <label for="search-box"><i class="material-icons">search</i></label>
+                    <input type="submit" id="search-submit" />
+                </form>
             </div>
             <div class="Header__right">
-                <button class="btn btn__secondary btn__m">Log In</button>
-                <button class="btn btn__main btn__m">Sign Up</button>
+                <router-link class="btn btn__secondary" to="/dashboard">Log In</router-link>
+                <router-link class="btn btn__main" to="/dashboard">Sign Up</router-link>
             </div>
         </div>
-        <div class="Header__fix"/>
+        <div class="Header__fix"></div>
     </div>
 </template>
 
 <script>
+import { mapState } from 'vuex';
 
 export default {
     data(){
         return{
-            currentLogo: null
+            currentLogo: null,
         }
     },
-  components: {},
-  mounted(){
-      this.currentLogo = this.RandomIMG();
-  },
-  methods:{
+    mounted(){
+        this.currentLogo = this.RandomIMG();
+        setInterval(() => {
+        this.currentLogo = this.RandomIMG()
+        }, 5000);
+    },
+    computed: {
+        ...mapState({
+            search: state => state.searchQuery
+        })
+    },
+    methods:{
         RandomIMG(){
             let imgs = [
                 this.$img['HeaderLogo1'],
@@ -34,11 +55,13 @@ export default {
                 this.$img['HeaderLogo4'],
                 this.$img['HeaderLogo5'],
                 this.$img['HeaderLogo6']
-            ]; //   Добавьте свои картинки через запятую
+            ];
             let i = Math.floor(Math.random() * imgs.length);
-           
             return imgs[i]
         },
-    }
+        updateSearch(e) {
+            this.$store.commit('updateSearch', e.target.value)
+        },
+    }   
 }
 </script>

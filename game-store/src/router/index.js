@@ -1,4 +1,5 @@
 import LandingPage from '@/views/LandingPage'
+import Dashboard from '@/views/Dashboard.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
@@ -6,6 +7,11 @@ const routes = [
     path: '/',
     name: 'landing',
     component: LandingPage
+  },
+  {
+    path: '/dashboard',
+    name: 'dashboard',
+    component: Dashboard
   },
   // {
   //   path: '/about',

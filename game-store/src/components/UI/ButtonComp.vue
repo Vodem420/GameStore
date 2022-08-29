@@ -7,9 +7,12 @@
 <script>
 export default {
     name: 'button-comp',
-  data() {
-    return {};
-  },
+    props: {
+      
+    },
+    data(){
+        return{}
+    },
 };
 </script>
 

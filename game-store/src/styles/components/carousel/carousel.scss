@@ -1,0 +1,60 @@
+.agile{
+    &__nav-button{
+        background: transparent;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        font-size: 2.4rem;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        transition-duration: .3s;
+        width: 5rem;
+        &:hover{
+            background-color: rgba(#000, .5);
+            opacity: 1;
+        }
+        &--prev{
+            left: 0;
+        }
+        &--next{
+            right: 0;
+        }
+    }
+    &__dots{
+        bottom: 1rem;
+        left: 50%;
+        position: absolute;
+        transform: translateX(-50%);
+    }
+
+    &__dot{
+        margin: 0 1rem;
+        button{
+            background-color: transparent;
+            border: 1px solid #fff;
+            border-radius: 50%;
+            cursor: pointer;
+            display: block;
+            height: 1rem;
+            font-size: 0;
+            line-height: 0;
+            margin: 0;
+            padding: 0;
+            transition-duration: .3s;
+            width: 1rem;
+        }
+        &--current{
+            &:hover{
+                button{
+                    background-color: #fff
+                }
+            }        
+        }
+    }
+    .slide{
+        position: relative;
+        display: block;
+        height: 50rem;
+    }
+}

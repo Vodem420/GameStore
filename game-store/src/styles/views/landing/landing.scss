@@ -1,0 +1,64 @@
+.S1{
+    color: var(--ColorWhite);
+    .slide{
+        height: calc(100vh - var(--HeaderH));
+    }
+    &__wrapper{
+        max-width: 48rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: inherit;
+        margin-left: 5%;
+    }
+    p{
+        font-size: 5rem;
+        padding-bottom: 2rem;
+    }
+    &__body{
+        color: var(--ColorGray);
+        padding-bottom: 2rem;
+    }
+    label{
+        font-size: 2rem;
+        text-transform: uppercase;
+    }
+    &__genres{
+        @include flex(flex, center);
+        padding-bottom: 2rem;
+        label{
+            padding-right: 2rem;
+        }
+    }
+    &__genre{
+        font-size: 1.8rem;
+        padding: 0.5rem 1rem;
+        border-radius: 2rem;
+        background: rgba($color: #A9A9A9, $alpha: 0.5);
+        &:not(:last-child){
+            margin-right: 1.5rem;
+        }
+    }
+    &__platforms{
+        @include flex(flex, center);
+        margin-bottom: 1rem;
+        label{
+            padding-right: 1.5rem;
+        }
+    }
+    &__players{
+        @include flex(flex, center);
+    }
+    &__background{
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 0;
+        z-index: -1;
+        height: inherit;
+        width: 100%;
+        filter: brightness(0.7);
+        margin-left: -5rem;
+        box-shadow: inset 0 -20rem 15rem 0 rgba(0,0,0,0.9);
+    }
+}
