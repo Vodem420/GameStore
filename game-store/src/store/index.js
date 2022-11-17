@@ -1,21 +1,10 @@
 import { createStore } from 'vuex'
+import { searchModule } from '@/store/searchModule'
+import { gameGenreModule } from '@/store/gameGenreModule'
 
 export default createStore({
-  state: {
-    searchQuery: '',
-  },
-  getters: {
-    searchGame(state){
-      return state.searchQuery
-    }
-  },
-  mutations: {
-    updateSearch(state, search){
-      state.searchQuery = search
-    }
-  },
-  actions: {
-  },
   modules: {
+    search: searchModule,
+    gameGenre: gameGenreModule,
   }
 })

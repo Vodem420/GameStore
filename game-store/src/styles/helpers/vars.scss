@@ -1,5 +1,6 @@
 :root {
     /*BG Colors*/
+    --BgWhite: #FFFFFF;
 
     /*Text Colors*/
 
@@ -10,9 +11,13 @@
     /*Button Colors*/
     
     --BgBtnWhite: #FFFFFF;
+    --BgCard: #202020;
 
     /*Content Space*/
     --HeaderH: 6rem;
     --ContentWidth: 135rem;
-    /*Content Space*/
+
+    /*Modal styles*/
+
+    --BackdropColor: rgba(0, 0, 0, 0.3);
 }

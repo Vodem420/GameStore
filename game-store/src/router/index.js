@@ -1,6 +1,7 @@
 import LandingPage from '@/views/LandingPage'
 import Dashboard from '@/views/Dashboard.vue'
 import { createRouter, createWebHistory } from 'vue-router'
+import store from '../store/index'
 
 const routes = [
   {
@@ -26,6 +27,13 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
+})
+
+router.beforeEach((to, from, next) => {
+  if(to.name != 'dashboard'){
+    store.commit('updateSearch', '')
+  }
+  next()
 })
 
 export default router

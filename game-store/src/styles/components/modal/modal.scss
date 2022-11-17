@@ -1,0 +1,39 @@
+.modal{
+    background: var(--BgWhite);
+    box-shadow: 2px 2px 20px 1px;
+    overflow-x: auto;
+    @include flex(flex);
+    flex-direction: column;
+    &__backdrop{
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: var(--BackdropColor);
+        @include flex(flex,center,center);
+    }
+    &__header{
+        position: relative;
+        border-bottom: 1px solid #eeeeee;
+        color: #fff;
+        justify-content: space-between;
+    }
+    &__body{
+        position: relative;
+        padding: 2rem 1rem;
+    }
+    &__footer{
+        border-top: 1px solid #eeeeee;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+}
+
+.modal-fade-enter, .modal-fade-leave-to {
+    opacity: 0;
+}
+.modal-fade-enter-active,
+.modal-fade-leave-active {
+    transition: opacity .5s ease;
+}

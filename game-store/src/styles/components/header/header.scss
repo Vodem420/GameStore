@@ -39,6 +39,10 @@
 
 .searchInput__wrapper{
     $tl: 0.6s; // transition length
+    input:-webkit-autofill,
+    input:-webkit-autofill:focus {
+        transition: background-color 600000s 0s, color 600000s 0s;
+    }
     .searchInput {
         transition: width $tl, border-radius $tl, background $tl, box-shadow $tl;
         width: 4rem;
