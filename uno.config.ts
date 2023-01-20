@@ -15,7 +15,8 @@ export default defineConfig({
     presetWebFonts({
       provider: "google",
       fonts: {
-        pacifico: "Pacifico",
+        montserrat: "Montserrat",
+        roboto: "Roboto",
       },
     }),
   ],
