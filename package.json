@@ -21,7 +21,7 @@
     "@iconify-json/carbon": "^1.1.7",
     "@rushstack/eslint-patch": "^1.1.4",
     "@types/jsdom": "^20.0.0",
-    "@types/node": "^16.11.56",
+    "@types/node": "^16.18.11",
     "@unocss/preset-icons": "^0.45.21",
     "@unocss/preset-web-fonts": "^0.45.21",
     "@vitejs/plugin-vue": "^3.0.3",

@@ -1,0 +1,38 @@
+.Header {
+  @include flex(flex, center, space-between);
+  height: var(--HeaderH);
+  padding: 0 2rem;
+  background: #0b0e15;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  &__left {
+    @include flex(flex, center);
+    img {
+      max-width: 4rem;
+      min-width: 4rem;
+      max-height: 4rem;
+      min-height: 4rem;
+      object-fit: contain;
+      margin-right: 3rem;
+      cursor: pointer;
+    }
+  }
+  &__right {
+    @include flex(flex, center);
+    a {
+      display: block;
+      min-width: 10rem;
+      padding: 0.9rem 2rem;
+      text-align: center;
+      &:last-child {
+        margin-left: 2rem;
+      }
+    }
+  }
+  &__fix {
+    height: var(--HeaderH);
+  }
+}

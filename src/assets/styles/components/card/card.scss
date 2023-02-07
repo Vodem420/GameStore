@@ -1,0 +1,81 @@
+.Card {
+  @include flex(flex, flex-start);
+  flex-direction: column;
+  margin-right: 2rem;
+  color: var(--White);
+  width: 30%;
+  background-color: var(--BgCard);
+  border-radius: 1.2rem;
+  overflow: hidden;
+  &__platforms {
+    display: flex;
+  }
+  &__ItemImg {
+    width: 100%;
+    height: 0;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding-top: 56.25%;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+  &__info {
+    width: 100%;
+    padding: 16px 16px 24px;
+  }
+  &__head {
+    @include flex(flex, center, space-between);
+    margin-bottom: 0.7rem;
+    img {
+      width: 1.5rem;
+      height: 1.5rem;
+      object-fit: contain;
+      &:not(:last-child) {
+        margin-right: 1rem;
+      }
+    }
+  }
+  &__Title {
+    @include flex(flex, center, space-between);
+    width: 100%;
+    min-height: 3rem;
+    margin-bottom: 2rem;
+    label {
+      font-size: 2.4rem;
+      line-height: 2rem;
+      font-weight: 600;
+    }
+  }
+  &__Raiting {
+    min-width: 32px;
+    padding: 2px 0;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 0.4rem;
+    font-size: 1.4rem;
+    min-height: 2rem;
+    &.green {
+      border: 1px solid rgba(109, 200, 73, 0.4);
+      color: #6dc849;
+    }
+    &.orange {
+      border: 1px solid rgba(253, 202, 82, 0.4);
+      color: #fdca52;
+    }
+    &.red {
+      border: 1px solid rgba(252, 75, 55, 0.4);
+      color: #fc4b37;
+    }
+  }
+  &__ItemGenres {
+    @include flex(flex, center);
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+    span:not(:last-child) {
+      margin-right: 1.5rem;
+    }
+  }
+}

@@ -1,9 +1,8 @@
-import { defineConfig, presetIcons, presetUno } from "unocss";
+import { defineConfig, presetIcons } from "unocss";
 import presetWebFonts from "@unocss/preset-web-fonts";
 
 export default defineConfig({
   presets: [
-    presetUno(),
     presetIcons({
       scale: 1.4,
       prefix: "i-",
@@ -15,8 +14,17 @@ export default defineConfig({
     presetWebFonts({
       provider: "google",
       fonts: {
-        montserrat: "Montserrat",
-        roboto: "Roboto",
+        montserrat: [
+          {
+            name: "Montserrat",
+            weights: ["400", "500", "600", "700"],
+            italic: true,
+          },
+          {
+            name: "sans-serif",
+            provider: "none",
+          },
+        ],
       },
     }),
   ],

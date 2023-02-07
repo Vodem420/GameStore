@@ -1,0 +1,16 @@
+.btn {
+  height: 4rem;
+  background: none;
+  border-radius: 2rem;
+  transition: 0.25s;
+  cursor: pointer;
+  text-decoration: none;
+  &__main {
+    color: red;
+    border: 2px solid red;
+  }
+  &__secondary {
+    color: greenyellow;
+    border: 2px solid greenyellow;
+  }
+}

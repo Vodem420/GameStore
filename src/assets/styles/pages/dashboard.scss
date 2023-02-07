@@ -1,0 +1,17 @@
+.Dashboard {
+  @include flex(flex);
+  max-width: 96%;
+  margin: 0 auto;
+  &__navPanel {
+    width: 20%;
+    margin-right: 5rem;
+  }
+  &__MainSection {
+    width: 75%;
+  }
+  &__ItemsWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+}
