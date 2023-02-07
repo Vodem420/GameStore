@@ -17,6 +17,13 @@ const raitingColor = computed<string>(() => {
     return "red";
   }
 });
+
+const platformsSlugs = computed<object>(() => {
+  let platforms = props.item.parent_platforms;
+  return platforms.map((i: any) => {
+    return i.platform.slug;
+  });
+});
 </script>
 
 <template>
@@ -28,11 +35,11 @@ const raitingColor = computed<string>(() => {
     <div class="Card__info">
       <div class="Card__head">
         <div class="Card__plaforms">
-          <!-- <img
+          <img
             v-for="platformImg in platformsSlugs"
             :key="platformImg"
-            :src="$img[platformImg]"
-          /> -->
+            :src="`/images/platforms/${platformImg}.svg`"
+          />
         </div>
         <div class="Card__Raiting" :class="raitingColor">
           {{ roundedRaiting }}
