@@ -1,0 +1,38 @@
+.navPanel {
+  width: 20rem;
+  margin-right: 2rem;
+  margin-top: 4rem;
+  h2 {
+    font-size: 2.4rem;
+    line-height: 2.8rem;
+    display: block;
+    margin-bottom: 1.6rem;
+    font-weight: 700;
+    color: var(--White);
+  }
+  &__list {
+    margin: 0 0 1rem;
+    &.active {
+      max-height: 24rem;
+      overflow-y: hidden;
+    }
+    img {
+      width: 3.2rem;
+      height: 3.2rem;
+      margin-right: 0.8rem;
+      border-radius: 0.5rem;
+      object-fit: cover;
+    }
+    span {
+      @include flex(flex, center);
+      padding-bottom: 0.8rem;
+      font-size: 1.6rem;
+      color: var(--White);
+    }
+  }
+  &__button {
+    color: var(--White);
+    @include flex(flex, center, space-between);
+    cursor: pointer;
+  }
+}

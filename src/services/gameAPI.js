@@ -8,10 +8,10 @@ export default {
   async getGames(p = {}) {
     return axios
       .get(this.options.allGamesUrl, {
-        params: { ...{ key: this.options.key, page_size: 40 }, ...p },
+        params: { ...{ key: this.options.key, page_size: 100 }, ...p },
       })
       .then(function (response) {
-        console.log(response.data.results);
+        // console.log(response.data.results);
         return response.data.results;
       })
       .catch(function (error) {

@@ -1,21 +1,13 @@
 import { defineStore } from "pinia";
 
-export type Search = { value: string };
-
 export const useSearchStore = defineStore("search", {
-  state: () => ({
-    searchValue: [] as Search[],
-  }),
+  state: () => ({ searchQuery: "" }),
   getters: {
-    setSearchValue() {
-      return this.searchValue;
-    },
+    searchGame: (state) => state.searchQuery,
   },
   actions: {
-    setSearchValue() {
-      this.searchValue;
+    updateSearch() {
+      this.searchQuery;
     },
   },
 });
-
-export default useSearchStore;

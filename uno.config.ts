@@ -9,6 +9,13 @@ export default defineConfig({
       extraProperties: {
         display: "inline-block",
       },
+      customizations: {
+        customize(props) {
+          props.width = "1.6rem";
+          props.height = "1.6rem";
+          return props;
+        },
+      },
       warn: true,
     }),
     presetWebFonts({
